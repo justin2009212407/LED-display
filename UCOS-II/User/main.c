@@ -6,7 +6,7 @@
 #include "includes.h"
 #include "led.h"
 #include <stdio.h>
-
+#include <string.h>
 struct floor_msg
 {
 	uint8_t elevator[3];
@@ -232,13 +232,14 @@ static void SysTick_Init()
 #define MAST_ADDR	0xFF
 static void rs485_tx_task(void *p_arg)
 {
+#if 0
 	uint8_t tx_buf[4];
 	
 	tx_buf[0] = FRAME_HEAD;
 	tx_buf[1] = MAST_ADDR;
 	tx_buf[2] = 0x00;	//	dst addr
 	tx_buf[3] = FRAME_TAIL;
-
+#endif 
  	while(1)
  	{
 

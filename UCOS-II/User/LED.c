@@ -1053,7 +1053,6 @@ void led_picture(short x,short y,
 
 void led_print(short x, short y, const char *str)
 {
-	char ch;
 	const uint8_t *ch_base;
 	short x0, y0;
 	uint8_t ch_width;
@@ -1079,13 +1078,11 @@ void led_print(short x, short y, const char *str)
 }
 void led_little_print(short x, short y, const char *str)
 {
-	char ch;
 	const uint8_t *ch_base;
 	short x0, y0;
-	uint8_t ch_width;
+	
 	x0 = x;
 	y0 = y;
-	ch_width = 1;
 
 	while(*str != 0)
 	{

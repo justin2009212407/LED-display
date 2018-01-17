@@ -179,11 +179,10 @@ uint16_t RS485_recieve_bytes(uint8_t *buf, uint16_t size)
 void USART3_IRQHandler(void)
 {
 	uint8_t Res;
-	unsigned char i=0;
-  if(USART_GetITStatus(USART3, USART_IT_RXNE) != RESET)
-  {
-    /* Clear the USART3 Receive interrupt */
-    USART_ClearITPendingBit(USART3, USART_IT_RXNE);
+	if(USART_GetITStatus(USART3, USART_IT_RXNE) != RESET)
+	{
+		/* Clear the USART3 Receive interrupt */
+		USART_ClearITPendingBit(USART3, USART_IT_RXNE);
 
     /* Read one byte from the receive data register */
     Res = USART_ReceiveData(USART3) & 0xFF;
